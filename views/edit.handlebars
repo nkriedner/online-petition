@@ -1,0 +1,75 @@
+
+<img class="img-1" src="../edit-image.jpeg" alt="">
+
+<h2>Edit your profile</h2>
+<form method="POST">
+
+    {{#userInfos}}
+
+    <div class="input-container">
+        <div>
+            <label for="first_name">First Name:</label>
+        </div>
+        <div>
+            <input id="first_name" type="text" name="first_name" value="{{first_name}}">
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="last_name">Last Name:</label>
+        </div>
+        <div>
+            <input id="last_name" type="text" name="last_name" value="{{last_name}}">
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="email_address">Email Address:</label>
+        </div>
+        <div>
+            <input id="email_address" type="email" name="email_address" value="{{email_address}}">
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="password_hash">Password:</label>
+        </div>
+        <div>
+            <input id="password_hash" type="password" name="password_hash">
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="age">Age:</label>
+        </div>
+        <div>
+            <input id="age" type="number" name="age" value="{{age}}">
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="city">City:</label>
+        </div>
+        <div>
+            <input id="city" type="text" name="city" value="{{city}}">
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="home_page">Homepage:</label>
+        </div>
+        <div>
+            <input id="home_page" type="url" name="url" value="{{url}}">
+        </div>
+    </div>
+
+    {{/userInfos}}
+    
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div>
+        <button type="submit">Update</button>
+    </div>
+    <br><br>
+    <p>---------</p>
+    <p class="nav-links"><a href="/logout">Logout</a></p>
+</form>

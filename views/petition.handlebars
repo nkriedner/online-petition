@@ -1,0 +1,24 @@
+<img class="img-1" src="edit-image.jpeg" alt="">
+
+<h2>The ICE-CREAM For Everyone Petition</h2>
+<p>Please sign this petition if you want everybody get one free ice-cream per week sponsored from the goverment.</p>
+<h4>Ice-Cream should be a birthright!!!</h4>
+{{!-- Empty error message paragraph - will be filled when an error occurs --}}
+{{#if error}}
+    <p class="error-message">{{error}}</p>
+{{/if}}
+<p class="error-message"></p>
+<form method="POST">
+    <div>
+        <input type="hidden" name="signature" required>
+    </div>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div>
+        <canvas width="400" height="100"></canvas>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="/script.js"></script>

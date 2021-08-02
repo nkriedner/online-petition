@@ -1,0 +1,57 @@
+
+
+
+<img class="img-1" src="registration-image.jpeg" alt="">
+
+<h2>Eating ice-cream...</h2>
+<ul>
+    <li>⤳ makes you happy and joyful</li>
+    <li>⤳ spreads a sense of love and peace</li>
+    <li>⤳ brings people closer together</li>
+</ul>
+
+<h2>Sign the Petition</h2>
+<p>Please register and sign this petition so everybody <br>gets one ice-cream per week sponsored from the goverment.</p>
+
+{{#if error}}
+    <p class="error-message">{{error}}</p>
+{{/if}}
+<form method="POST">
+    <div class="input-container">
+        <div>
+            <label for="first_name">First Name:</label>
+        </div>
+        <div>
+            <input id="first_name" type="text" name="first_name" required>
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="last_name">Last Name:</label>
+        </div>
+        <div>
+            <input id="last_name" type="text" name="last_name" required>
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="email_address">Email Address:</label>
+        </div>
+        <div>
+            <input id="email_address" type="email" name="email_address" required>
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="password_hash">Password:</label>
+        </div>
+        <div>
+            <input id="password_hash" type="password" name="password_hash" required>
+        </div>
+    </div>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div>
+        <button type="submit">Register</button>
+    </div>
+</form>
+<p>If you are already registered, please <a href="/login">LOG IN</a>!</p>

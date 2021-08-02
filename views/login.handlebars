@@ -1,0 +1,37 @@
+<h2>Please log in!</h2><br>
+
+    {{!-- ERROR MESSAGES --}}
+    {{#if wrongPassword}}
+        <p class="error-message">{{wrongPassword}}</p>
+    {{/if}}
+
+    {{#if userNonExisting}}
+        <p class="error-message">{{userNonExisting}}<br>Please try to login again or <a href="/register">register</a> first!</p>
+    {{/if}}
+
+    {{#if loginError}}
+        <p class="error-message">{{loginError}}</p>
+    {{/if}}
+
+<form method="POST">
+    <div class="input-container">
+        <div>
+            <label for="email_address">Email Address:</label>
+        </div>
+        <div>
+            <input id="email_address" type="email" name="email_address" required>
+        </div>
+    </div>
+    <div class="input-container">
+        <div>
+            <label for="password_hash">Password:</label>
+        </div>
+        <div>
+            <input id="password_hash" type="password" name="password_hash" required>
+        </div>
+    </div>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>

@@ -1,0 +1,18 @@
+<main>
+    <img class="img-1" src="thanks-image.jpeg" alt="">
+    <h2>Thank you so much for signing our petition!</h2>
+    <p>This will help spread the love for ice-cream around the globe and someday save humanity...</p>
+    
+    {{!-- <br><br>     --}}
+
+    <img class="signature-display" src="{{signature}}" alt="your signature">
+    
+    <p class="nav-links"><a href="/signers">See all signers</a></p>
+    <p class="nav-links"><a href="/profile/edit">Edit your profile</a></p>
+    
+    <form class="delete-signature" method="POST">
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <button class="nav-links" type="submit">Delete your signature</button>
+    </form>
+    <p class="nav-links"><a href="/logout">Logout</a></p>
+</main>

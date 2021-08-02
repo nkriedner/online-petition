@@ -1,0 +1,49 @@
+<main>
+
+    {{#if chosenCity}}
+        <img class="img-1" src="../signers-image.jpeg" alt="">
+        <h2>People who signed our petition</h2>
+        <h3>From the beautiful city of {{chosenCity}} these wonderful people have signed:</h3>
+    {{else}}
+        <img class="img-1" src="signers-image.jpeg" alt="">
+        <h2>People who signed our petition</h2>
+        <h3>Click on a city name to see al signers from that city!</h3>
+    {{/if}}
+        <br><br>
+    
+    {{#signers}}
+
+        {{#if url}}
+            <p>
+                <a target="_blank" href="{{url}}">{{first_name}} {{last_name}}</a>
+                {{#if age}}
+                    <span> / </span>{{age}}<span> / </span> 
+                {{/if}}
+                {{#if city}}
+                    {{!-- {{city}} --}}
+                    <a href="/signers/{{city}}">{{city}}</a>
+                {{/if}}
+            </p>
+        {{else}}
+            <p>
+                {{first_name}} {{last_name}}
+                {{#if age}}
+                    <span> / </span>{{age}}<span> / </span> 
+                {{/if}}
+                {{#if city}}
+                    {{!-- {{city}} --}}
+                    <a href="/signers/{{city}}">{{city}}</a>
+                {{/if}}
+            </p>
+        {{/if}}
+        {{!-- <p>{{first_name}} {{last_name}}</p> --}}
+    {{/signers}}
+        <p>---------</p>
+        <p class="nav-links"><a href="/thanks">Back to thanks</a></p>
+
+    {{#if chosenCity}}
+        <p class="nav-links"><a href="/signers">Back to all Signers</a></p>
+    {{/if}}
+    
+        <p class="nav-links"><a href="/logout">Logout</a></p>
+</main>
